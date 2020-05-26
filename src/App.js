@@ -1,5 +1,4 @@
-import React from 'react';
-import './App.css';
+import React, { useEffect, useState } from 'react';
 
 function App() {
 
@@ -9,6 +8,16 @@ function App() {
   // sample GET request:
   //"https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}"
   const request = `https://api.edamam.com/search?q=chicken&app_id=${appID}&app_key=${apiKey}`
+
+  useEffect(() => {
+    getRecipes()
+  }, [])
+
+  const getRecipes = async () => {
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log(data);
+  }
 
   return (
     <div className="App">
