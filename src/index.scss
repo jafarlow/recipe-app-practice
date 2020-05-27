@@ -4,3 +4,23 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
+
+.App {
+  height: 100vh;
+
+}
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr)
+}
+
+.dish {
+  margin: 0 auto;
+  max-width: 300px;
+
+  img {
+    max-width: 250px;
+    height: auto;
+  }
+}
