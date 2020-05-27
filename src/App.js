@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Recipe from './Recipe.js'
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
     const data = await response.json()
     // hits are the individual recipes returned from a query
     setRecipes(data.hits)
-    // console.log(data.hits);
+    console.log(data.hits);
   }
 
   return (
@@ -29,6 +30,9 @@ function App() {
         <input className="search-bar" type="text" />
         <button className="search-button" type="submit">Search</button>
       </form>
+      {recipes.map(dish => (
+        <Recipe key={dish.recipe.label} title={dish.recipe.label} calories={dish.recipe.calories} image={dish.recipe.image}/>
+      ))}
     </div>
   );
 }
