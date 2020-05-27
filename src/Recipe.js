@@ -2,7 +2,7 @@ import React from 'react'
 
 const Recipe = ({ title, calories, image, ingredients }) => {
   return (
-    <div>
+    <div className="dish">
       <h2>{title}</h2>
       <ul>
         {ingredients.map(ingredient => (

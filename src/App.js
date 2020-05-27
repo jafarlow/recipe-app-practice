@@ -8,7 +8,7 @@ function App() {
 
   const [recipes, setRecipes] = useState([])
   const [search, setSearch] = useState('')
-  const [query, setQuery] = useState('chicken')
+  const [query, setQuery] = useState('')
 
   // sample GET request:
   //"https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}"
@@ -16,6 +16,7 @@ function App() {
 
   useEffect(() => {
     getRecipes()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query])
 
   const getRecipes = async () => {
@@ -42,15 +43,17 @@ function App() {
         <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
         <button className="search-button" type="submit">Search</button>
       </form>
-      {recipes.map(dish => (
-        <Recipe
-          key={dish.recipe.label}
-          title={dish.recipe.label}
-          calories={dish.recipe.calories}
-          image={dish.recipe.image}
-          ingredients={dish.recipe.ingredients}
-        />
-      ))}
+      <article className="recipes">
+        {recipes.map(dish => (
+          <Recipe
+            key={dish.recipe.label}
+            title={dish.recipe.label}
+            calories={dish.recipe.calories}
+            image={dish.recipe.image}
+            ingredients={dish.recipe.ingredients}
+          />
+        ))}
+      </article>
     </div>
   );
 }
