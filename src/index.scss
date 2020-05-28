@@ -12,15 +12,27 @@ body {
 
 .recipes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: repeat(4, 1fr)
 }
 
 .dish {
   margin: 0 auto;
-  max-width: 300px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+    min-height: 56px;
+  }
 
   img {
-    max-width: 250px;
-    height: auto;
+    align-self: baseline;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .recipes {
+    grid-template-columns: repeat(2, 1fr)
   }
 }
