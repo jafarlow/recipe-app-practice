@@ -46,11 +46,11 @@ function App() {
       <article className="recipes">
         {recipes.map(dish => (
           <Recipe
-            key={dish.recipe.label}
+            key={dish.recipe.calories}
             title={dish.recipe.label}
             calories={dish.recipe.calories}
             image={dish.recipe.image}
-            ingredients={dish.recipe.ingredients}
+            ingredients={dish.recipe.ingredientLines}
           />
         ))}
       </article>
