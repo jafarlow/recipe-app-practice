@@ -6,17 +6,22 @@ import React from 'react'
 // generating a duplicate value in the list is small enough to
 // consider it 0%
 
-const Recipe = ({ title, calories, image, ingredients }) => {
+const target = "_blank"
+const rel = "external nofollow noopener noreferrer"
+const ariaLabel = "Recipe host site"
+
+const Recipe = ({ title, calories, image, ingredients, url }) => {
   return (
     <div className="dish">
       <h2>{title}</h2>
-      <img src={image} alt="" />
+      <img src={image} alt={"cooked " + title} />
       <ul>
         {ingredients.map(ingredient => (
           <li key={Math.random()}>{ingredient}</li>
         ))}
       </ul>
       <p>{calories}</p>
+      <p className="source-link">Visit <a href={url} target={target} rel={rel} aria-label={ariaLabel}>recipe source</a> for cooking instructions (external link)</p>
     </div>
   )
 }
