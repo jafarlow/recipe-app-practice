@@ -25,7 +25,13 @@ h1 {
 
 input {
   margin: 1rem 0 2rem;
+  padding: 0.25rem 0;
   width: 500px;
+}
+
+button {
+  padding: 0.25rem 0.75rem;
+  font-weight: bold;
 }
 
 .recipes {
