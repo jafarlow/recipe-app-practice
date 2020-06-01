@@ -10,7 +10,8 @@ const target = "_blank"
 const rel = "external nofollow noopener noreferrer"
 const ariaLabel = "Recipe host site"
 
-const Recipe = ({ title, calories, image, ingredients, url }) => {
+const Recipe = ({ title, calories, image, ingredients, url, servings }) => {
+  console.log(typeof {calories});
   return (
     <div className="dish">
       <h2>{title}</h2>
@@ -20,7 +21,8 @@ const Recipe = ({ title, calories, image, ingredients, url }) => {
           <li key={Math.random()}>{ingredient}</li>
         ))}
       </ul>
-      <p>{calories}</p>
+      <p># of servings: {servings}</p>
+      <p>Calories per serving: {Math.round(calories / servings)}</p>
       <p className="source-link">Visit <a href={url} target={target} rel={rel} aria-label={ariaLabel}>recipe source</a> for cooking instructions (external link)</p>
     </div>
   )
