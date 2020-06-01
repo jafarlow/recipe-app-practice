@@ -39,6 +39,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Recipe Search</h1>
       <form className="search-form" onSubmit={getSearch}>
         <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
         <button className="search-button" type="submit">Search</button>
@@ -51,6 +52,7 @@ function App() {
             calories={dish.recipe.calories}
             image={dish.recipe.image}
             ingredients={dish.recipe.ingredientLines}
+            servings={dish.recipe.yield}
             url={dish.recipe.url}
           />
         ))}
