@@ -1,8 +1,15 @@
+$purple: #522D80;
+$lightpurple: rgba(82,45,128,0.25);
+
+$lightorange: rgba(246,103,51,0.35);
+$mediumorange: rgba(246,103,51,0.65);
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  background-color: $lightpurple;
 }
 
 .App {
@@ -35,11 +42,15 @@ input {
   flex-direction: column;
   box-sizing: border-box;
   border: 1px solid black;
+  background-color: $lightorange;
 
   h2 {
     text-align: center;
     min-height: 56px;
     text-transform: capitalize;
+    color: $purple;
+    text-decoration: underline;
+    text-decoration-color: $mediumorange;
   }
 
   img {
