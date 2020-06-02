@@ -11,7 +11,6 @@ const rel = "external nofollow noopener noreferrer"
 const ariaLabel = "Recipe host site"
 
 const Recipe = ({ title, calories, image, ingredients, url, servings }) => {
-  console.log(typeof {calories});
   return (
     <div className="dish">
       <h2>{title}</h2>
