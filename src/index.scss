@@ -1,4 +1,5 @@
-$purple: #522D80;
+$purple: rgba(82,45,128,0.95);
+$almostblack: rgba(22,22,29,1);
 $lightpurple: rgba(82,45,128,0.25);
 
 $lightorange: rgba(246,103,51,0.35);
@@ -54,9 +55,9 @@ button {
     text-align: center;
     min-height: 56px;
     text-transform: capitalize;
-    color: $purple;
+    color: $almostblack;
     text-decoration: underline;
-    text-decoration-color: $mediumorange;
+    // text-decoration-color: $purple;
   }
 
   img {
@@ -86,7 +87,7 @@ button {
     flex-direction: column;
     margin-bottom: 2rem;
   }
-  
+
   input {
     width: 300px;
     margin-bottom: 0.25rem;
