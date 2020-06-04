@@ -33,7 +33,18 @@ body {
     li {
       list-style: none;
       padding: 0 2rem;
+      font-size: 1.125rem;
     }
+  }
+}
+
+.Home {
+  width: 1000px;
+  margin: 0 auto;
+
+  p {
+    text-align: justify;
+    font-size: 1.125rem;
   }
 }
 
@@ -100,6 +111,9 @@ button {
 }
 
 @media only screen and (max-width: 1000px) {
+  .Home {
+    width: 800px;
+  }
   .recipes {
     grid-template-columns: repeat(2, 1fr);
   }
