@@ -9,6 +9,7 @@ function App() {
     <Router>
       <div className="App">
         <nav>
+          <img src={require("./logo.png")} alt="" />
           <ul>
             <li>
               <Link to="/">Home</Link>
