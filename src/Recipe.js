@@ -8,7 +8,6 @@ import React from 'react'
 
 const target = "_blank"
 const rel = "external nofollow noopener noreferrer"
-const ariaLabel = "Recipe host site"
 
 const Recipe = ({ title, calories, image, ingredients, url, servings }) => {
   return (
@@ -22,7 +21,7 @@ const Recipe = ({ title, calories, image, ingredients, url, servings }) => {
       </ul>
       <p># of servings: {servings}</p>
       <p>Calories per serving: {Math.round(calories / servings)}</p>
-      <p className="source-link">Visit <a href={url} target={target} rel={rel} aria-label={ariaLabel}>recipe source</a> for cooking instructions (external link)</p>
+      <p className="source-link">Visit <a href={url} target={target} rel={rel}>recipe source</a> for cooking instructions (external link)</p>
     </div>
   )
 }
