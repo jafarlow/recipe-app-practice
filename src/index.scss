@@ -114,16 +114,99 @@ button {
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1650px) {
+  .recipes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1275px) {
+  .dish {
+    width: 300px;
+
+    img {
+      width: 250px;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 1025px) {
   .Home {
     width: 800px;
   }
   .recipes {
     grid-template-columns: repeat(2, 1fr);
   }
+  .dish {
+    width: 400px;
+
+    img {
+      width: 300px;
+      height: auto;
+    }
+  }
 }
 
-@media only screen and (max-width: 416px) {
+@media only screen and (max-width: 850px) {
+  .dish {
+    width: 300px;
+
+    img {
+      width: 250px;
+      height: auto;
+    }
+  }
+}
+@media only screen and (max-width: 650px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  input {
+    width: 400px;
+    margin-bottom: 0.25rem;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 400px;
+    box-sizing: border-box;
+  }
+
+  .recipes {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .dish {
+    width: 400px;
+
+    img {
+      width: 300px;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .App {
+    nav {
+      img {
+        padding-left: 2rem;
+      }
+      ul {
+        padding-right: 0;
+      }
+      li {
+        list-style: none;
+        padding: 0 1.75rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
   form {
     display: flex;
     flex-direction: column;
