@@ -135,7 +135,7 @@ button {
   .Home {
     width: 800px;
   }
-  
+
   .recipes {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -162,6 +162,14 @@ button {
 }
 
 @media only screen and (max-width: 800px) {
+  .App {
+    nav {
+      img {
+        height: 3.75rem;
+      }
+    }
+  }
+
   .Home {
     width: 100vw;
     padding: 0 2rem;
@@ -170,6 +178,14 @@ button {
 }
 
 @media only screen and (max-width: 650px) {
+  .App {
+    nav {
+      img {
+        height: 3.25rem;
+      }
+    }
+  }
+
   .Home {
     p {
       font-size: 1rem;
@@ -212,6 +228,7 @@ button {
     nav {
       img {
         padding-left: 2rem;
+        height: 3rem;
       }
       ul {
         padding-right: 0;
