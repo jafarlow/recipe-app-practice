@@ -1,9 +1,12 @@
-$purple: rgba(82,45,128,0.95);
-$almostblack: rgba(22,22,29,1);
+$purple: rgba(82,45,128,0.65);
 $lightpurple: rgba(82,45,128,0.25);
 
+$almostblack: rgba(22,22,29,1);
+$footerLink: #61DAFB;
+
 $lightorange: rgba(246,103,51,0.35);
-$mediumorange: rgba(246,103,51,0.65);
+$orange: rgba(246,103,51,0.65);
+$orange: rgb(246,103,51);
 
 body {
   margin: 0;
@@ -18,9 +21,11 @@ body {
 }
 
 .App {
-  min-height: calc(100vh - 5rem);
+  // NOTE: 7rem is footer height + .App bottom margin
+  min-height: calc(100vh - 7rem);
   // NOTE: flex here combines with body to force the footer to be sticky as dynamic content comes into play
   flex: 1;
+  margin-bottom: 2rem;
 
   nav {
     display: flex;
@@ -124,6 +129,16 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $purple;
+
+  p {
+    padding: 0 1rem;
+    color: white;
+  }
+
+  a {
+    color: $footerLink;
+  }
 }
 
 @media only screen and (max-width: 1650px) {
