@@ -12,10 +12,15 @@ body {
                'Fira Sans', 'Droid Sans', 'Helvetica Neue',
                sans-serif;
   background-color: $lightpurple;
+  // NOTE: flex here is used to force a sticky footer
+  display: flex;
+  flex-direction: column;
 }
 
 .App {
-  height: 100vh;
+  min-height: calc(100vh - 5rem);
+  // NOTE: flex here combines with body to force the footer to be sticky as dynamic content comes into play
+  flex: 1;
 
   nav {
     display: flex;
@@ -115,8 +120,10 @@ button {
 }
 
 .footer {
+  height: 5rem;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 1650px) {
