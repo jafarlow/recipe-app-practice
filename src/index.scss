@@ -114,6 +114,11 @@ button {
   }
 }
 
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 1650px) {
   .recipes {
     grid-template-columns: repeat(3, 1fr);
