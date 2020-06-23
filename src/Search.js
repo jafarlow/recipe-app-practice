@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Recipe from './Recipe.js'
 
 const Search = () => {
@@ -11,8 +10,6 @@ const Search = () => {
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('')
 
-  // sample GET request:
-  //"https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}"
   const request = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${apiKey}`
 
   useEffect(() => {
