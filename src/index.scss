@@ -52,7 +52,7 @@ body {
 }
 
 .Home {
-  width: 1000px;
+  width: 62.5rem;
   margin: 0 auto;
 
   p {
@@ -75,7 +75,7 @@ h1 {
 input {
   margin: 1rem 0 2rem;
   padding: 0.25rem 0;
-  width: 500px;
+  width: 31.25rem;
 }
 
 button {
@@ -86,22 +86,22 @@ button {
 .recipes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 16px;
+  grid-gap: 1rem;
 }
 
 .dish {
   margin: 0 auto;
   padding: 1rem 0;
-  width: 400px;
+  width: 25rem;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  border: 1px solid black;
+  border: 0.0625rem solid black;
   background-color: $lightorange;
 
   h2 {
     text-align: center;
-    min-height: 56px;
+    min-height: 3.5rem;
     text-transform: capitalize;
     color: $almostblack;
     text-decoration: underline;
@@ -141,26 +141,26 @@ button {
   }
 }
 
-@media only screen and (max-width: 1680px) {
+@media only screen and (max-width: 105rem) {
   .recipes {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media only screen and (max-width: 1275px) {
+@media only screen and (max-width: 79.6875rem) {
   .dish {
-    width: 300px;
+    width: 18.75;
 
     img {
-      width: 250px;
+      width: 15.625rem;
       height: auto;
     }
   }
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 64.0625rem) {
   .Home {
-    width: 800px;
+    width: 50rem;
   }
 
   .recipes {
@@ -168,27 +168,27 @@ button {
   }
 
   .dish {
-    width: 400px;
+    width: 25rem;
 
     img {
-      width: 300px;
+      width: 18.75rem;
       height: auto;
     }
   }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 53.125rem) {
   .dish {
-    width: 300px;
+    width: 18.75rem;
 
     img {
-      width: 250px;
+      width: 15.625rem;
       height: auto;
     }
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 50rem) {
   .App {
     nav {
       img {
@@ -204,7 +204,7 @@ button {
   }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 40.625rem) {
   .App {
     nav {
       img {
@@ -232,7 +232,7 @@ button {
   }
 
   button {
-    width: 400px;
+    width: 25rem;
     box-sizing: border-box;
   }
 
@@ -241,10 +241,10 @@ button {
   }
 
   .dish {
-    width: 400px;
+    width: 25rem;
 
     img {
-      width: 300px;
+      width: 18.75rem;
       height: auto;
     }
   }
@@ -256,7 +256,7 @@ button {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 30rem) {
   .App {
     nav {
       img {
@@ -285,13 +285,13 @@ button {
   }
 
   input {
-    width: 300px;
+    width: 18.75rem;
     margin-bottom: 0.25rem;
     box-sizing: border-box;
   }
 
   button {
-    width: 300px;
+    width: 18.75rem;
     box-sizing: border-box;
   }
 
@@ -300,10 +300,10 @@ button {
   }
 
   .dish {
-    width: 300px;
+    width: 18.75rem;
 
     img {
-      width: 250px;
+      width: 15.625rem;
       height: auto;
     }
   }
