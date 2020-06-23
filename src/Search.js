@@ -22,7 +22,8 @@ const Search = () => {
     const data = await response.json()
     // hits are the individual recipes returned from a query
     setRecipes(data.hits)
-    console.log(data.hits);
+    // NOTE: use the below to see full JSON structure when looking to add more functionality to the app
+    // console.log(data.hits);
   }
 
   const updateSearch = e => {
