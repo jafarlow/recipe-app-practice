@@ -53,6 +53,8 @@ const Search = () => {
             ingredients={dish.recipe.ingredientLines}
             servings={dish.recipe.yield}
             url={dish.recipe.url}
+            diet={dish.recipe.dietLabels}
+            health={dish.recipe.healthLabels}
           />
         ))}
       </article>
