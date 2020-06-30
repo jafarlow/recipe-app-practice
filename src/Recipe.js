@@ -26,7 +26,8 @@ const Recipe = ({ title, calories, image, ingredients, url, servings, diet, heal
       </ul>
       <p># of servings: {servings}</p>
       <p>Calories per serving: {Math.round(calories / servings)}</p>
-      <p>Health Label(s): {health.join(', ')}</p>
+      {diet.length > 0 ? <p>Diet info: {diet.join(', ')}</p> : ''}
+      <p>Health Labels: {health.join(', ')}</p>
       <p className="source-link">Visit <a href={url} target={target} rel={rel}>recipe source</a> for cooking instructions (external link)</p>
     </div>
   )
