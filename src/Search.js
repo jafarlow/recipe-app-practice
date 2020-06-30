@@ -10,7 +10,7 @@ const Search = () => {
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('')
 
-  const request = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${apiKey}`
+  const request = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${apiKey}&from=0&to=12`
 
   useEffect(() => {
     getRecipes()
