@@ -10,8 +10,8 @@ Edamam API docs:
 
 https://developer.edamam.com/edamam-docs-recipe-api
 
-version 1, published 23 June 2020:
-Home page with information about the app
+version 1, published 23 June 2020:\
+Home page with information about the app\
 Search page which returns 10 recipes
   - each recipe contained:
     - Dish name
@@ -21,7 +21,7 @@ Search page which returns 10 recipes
     - Calories per serving
     - Link to recipe source for cooking instructions
 
-version 2, published 30 June 2020:
+version 2, published 30 June 2020:\
 Changes to Search page:
   - returns 12 recipes instead of 10
   - Added diet and health labels
