@@ -24,10 +24,13 @@ const Recipe = ({ title, calories, image, ingredients, url, servings, diet, heal
           <li key={Math.random()}>{ingredient}</li>
         ))}
       </ul>
-      <p># of servings: {servings}</p>
-      <p>Calories per serving: {Math.round(calories / servings)}</p>
-      {diet.length > 0 ? <p>Diet info: {diet.join(', ')}</p> : ''}
-      <p>Health Labels: {health.join(', ')}</p>
+      <p><b># of servings:</b> {servings}</p>
+      <p><b>Calories per serving:</b> {Math.round(calories / servings)}</p>
+      {diet.length > 0
+        ? <p><b>Diet info:</b> {diet.join(', ')}</p>
+        : ''
+      }
+      <p><b>Health Labels:</b> {health.join(', ')}</p>
       <p className="source-link">Visit <a href={url} target={target} rel={rel}>recipe source</a> for cooking instructions (external link)</p>
     </div>
   )
