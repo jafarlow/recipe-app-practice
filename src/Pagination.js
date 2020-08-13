@@ -90,6 +90,73 @@ class Pagination extends Component {
     // return this when the `if` isn't triggered
     return range(1, totalPages)
   }
+
+  // NOTE NOTE: WRITE AN SR-ONLY CLASS IN SCSS!!!!!!! NOTE NOTE
+  render () {
+    if (!this.totalRecipes || (this.totalPages === 1)) return null
+
+    // call in the default set in constructor
+    const { currentPage } = this.state
+
+    // initialize fetchPageNumbers function
+    const pages = this.fetchPageNumbers()
+
+    return (
+      <Fragment>
+        <nav>
+          <ul>
+            { pages.map((page, index) => {
+
+              {/* return on same line to reduce pyramid indent */}
+              if (page === LEFT_PAGE) return {
+                <li key={index} className="page-item">
+                  <a
+                    className="page-link"
+                    href="#"
+                    aria-label="Previous"
+                    onClick={this.handleMoveLeft}
+                  >
+                    {/* 2 spans, one shown just to SR, one just to visual users */}
+                    <span aria-hidden="true">&laquo;</span>
+                    <span className="sr-only">Previous</span>
+                  </a>
+                </li>
+              }
+
+              if (page === RIGHT_PAGE) return {
+                <li key={index} className="page-item">
+                  <a
+                    className="page-link"
+                    href="#"
+                    aria-label="Next"
+                    onClick={this.handleMoveRight}
+                  >
+                    <span aria-hidden="true">&raquo;</span>
+                    <span className="sr-only">Next</span>
+                  </a>
+                </li>
+              }
+
+              return (
+                <li key={index} className={`page-item${currentPage === page ? ' active' : ''}`}
+                >
+                  <a
+                    className="page-link"
+                    href="#"
+                    onClick={this.handleClick(page)}
+                  >
+                    {page}
+                  </a>
+                </li>
+              )
+
+            }) }
+
+          </ul>
+        </nav>
+      </Fragment>
+    )
+  }
 }
 
 export default Pagination
