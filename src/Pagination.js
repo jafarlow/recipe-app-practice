@@ -33,6 +33,38 @@ class Pagination extends Component {
     this.state = { currentPage: 1 }
   }
 
+  componentDidMount() {
+    this.gotoPage(1)
+  }
+
+  gotoPage = (page) => {
+    const { onPageChanged = f => f } = this.props
+    const currentPage = Math.max(0, Math.min(page, this.totalPages))
+    const paginationData = {
+      currentPage,
+      totalPages: this.totalPages,
+      pageLimit: this.pageLimit,
+      totalRecipes: this.totalRecipes
+    }
+
+    this.setState({ currentPage }, () => onPageChanged(paginationData))
+  }
+
+  handleClick = (page) => (event) => {
+    event.preventDefault()
+    this.gotoPage(page)
+  }
+
+  handleMoveLeft = (event) => {
+    event.preventDefault()
+    this.gotoPage(this.state.currentPage - (this.pageNeighbors * 2) - 1)
+  }
+
+  handleMoveRight = (event) => {
+    event.preventDefault()
+    this.gotoPage(this.state.currentPage + (this.pageNeighbors * 2) + 1)
+  }
+
   fetchPageNumbers = () => {
     const totalPages = this.totalPages
     const currentPage = this.state.currentPage
