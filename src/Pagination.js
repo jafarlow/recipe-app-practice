@@ -1,5 +1,21 @@
 import React, { Component, Fragment } from 'react'
 
+const LEFT_PAGE = 'LEFT';
+const RIGHT_PAGE = 'RIGHT';
+
+// create a range of numbers
+const range = (from, to, step = 1) => {
+  let i = from
+  const range = []
+
+  while (1 <= to) {
+    range.push(i)
+    i += step
+  }
+  
+  return range
+}
+
 class Pagination extends Component {
   constructor(props) {
     super(props)
