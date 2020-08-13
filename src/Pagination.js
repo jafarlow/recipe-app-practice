@@ -12,7 +12,7 @@ const range = (from, to, step = 1) => {
     range.push(i)
     i += step
   }
-  
+
   return range
 }
 
@@ -32,6 +32,63 @@ class Pagination extends Component {
 
     this.state ={ currentPage: 1 }
   }
+
+  fetchPageNumbers = () => {
+    const totalPages = this.totalPages
+    const currentPage = this.state.currentPage
+    const pageNeighbors = this.pageNeighbors
+
+    // total page numbers to show on the nav control
+    const totalNumbers = (this.pageNeighbors * 2) + 3
+    // might need to adjust this number as the tutorial is using 2 pageNeighbors, whereas I want 1
+    // using +2 to cover the left & right controls
+    const totalBlocks = totalNumbers + 2
+
+    if (totalPages > totalBlocks) {
+      const startPage = Math.max(2, (currentPage - pageNeighbors))
+      const endPage = Math.min((totalPages - 1), (currentPage + pageNeighbors))
+
+      // calling in range declared outside the component
+      let pages = range(startPage, endPage)
+
+      
+    }
+  }
 }
 
 export default Pagination
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
