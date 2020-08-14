@@ -104,7 +104,7 @@ class Pagination extends Component {
         // if hidden to the right but not the left
         case (!hasLeftSpill && hasRightSpill): {
           const extraPages = range((endPage + 1), (endPage + spillOffset))
-          const pages = [...pages, ...extraPages, RIGHT_PAGE]
+          pages = [...pages, ...extraPages, RIGHT_PAGE]
           break;
         }
 
@@ -139,8 +139,8 @@ class Pagination extends Component {
           <ul>
             { pages.map((page, index) => {
 
-              {/* return on same line to reduce pyramid indent */}
-              if (page === LEFT_PAGE) return {
+            {/* return on same line to reduce pyramid indent */}
+              if (page === LEFT_PAGE) return (
                 <li key={index} className="page-item">
                   <a
                     className="page-link"
@@ -153,9 +153,9 @@ class Pagination extends Component {
                     <span className="sr-only">Previous</span>
                   </a>
                 </li>
-              }
+              )
 
-              if (page === RIGHT_PAGE) return {
+              if (page === RIGHT_PAGE) return (
                 <li key={index} className="page-item">
                   <a
                     className="page-link"
@@ -167,7 +167,7 @@ class Pagination extends Component {
                     <span className="sr-only">Next</span>
                   </a>
                 </li>
-              }
+              )
 
               return (
                 <li key={index} className={`page-item${currentPage === page ? ' active' : ''}`}
