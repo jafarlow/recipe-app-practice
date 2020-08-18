@@ -6,9 +6,15 @@ const Search = () => {
   const apiKey = process.env.REACT_APP_API_KEY
   const appID = process.env.REACT_APP_RECIPE_APP_ID
 
+  // for data handling
   const [recipes, setRecipes] = useState([])
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('')
+
+  // for page info
+  const [page, setPage] = useState(1)
+  const [count, setCount] = useState(0)
+  const [pageSize, setPageSize] = useState(12)
 
   const request = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${apiKey}&from=0&to=12`
 
