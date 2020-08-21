@@ -16,6 +16,10 @@ const Search = () => {
   const [count, setCount] = useState(0)
   const [pageSize, setPageSize] = useState(12)
 
+  // for future implementation of giving user ability to change
+  // the recipes displayed per page 
+  const pageSizes = [12, 24, 48, 96]
+
   const request = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${apiKey}&from=0&to=12`
 
   useEffect(() => {
