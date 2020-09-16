@@ -21,7 +21,7 @@ const Search = () => {
   // the recipes displayed per page
   const pageSizes = [12, 24, 48, 96]
 
-  const request = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${apiKey}&from=0&to=12` // NOTE: update to be 96 in future
+  const request = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${apiKey}&from=0&to=96` // NOTE: update to be 96 in future
 
   useEffect(() => {
     getRecipes()
@@ -36,7 +36,8 @@ const Search = () => {
     // NOTE: use the below to see full JSON structure when looking to add more functionality to the app
     // console.log(data.hits);
     // NOTE: this is an attempt from pagination tutorial
-    setCount(data.hits) // first thoughts: this'd have `count` #pages
+    setCount(data.hits.length / pageSize) // first thoughts: this'd have `count` #pages
+    console.log(count)
   }
 
   const updateSearch = e => {
@@ -61,6 +62,14 @@ const Search = () => {
     // resets page to 1 when adjusting the page size
     setPage(1)
   }
+
+  // NOTE: this changes the size of the array mapped over below, based on the page size selected by the user--default is 12
+  const recipeArray = (arr) => {
+    return arr.slice(0,pageSize)
+  }
+
+  // start of recipe map to display on page
+  //{recipes.map(dish => (
 
   return (
     <div className="Search">
@@ -89,7 +98,7 @@ const Search = () => {
         />
       </section>
       <article className="recipes">
-        {recipes.map(dish => (
+        {recipeArray(recipes).map(dish => (
           <Recipe
             key={dish.recipe.calories}
             title={dish.recipe.label}
