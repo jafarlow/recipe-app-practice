@@ -8,7 +8,8 @@
 !function(){
   function attr() {
     var
-      tag,attr = document.getElementById("edamam-badge"),
+      tag,
+        attr = document.getElementById("edamam-badge"),
       elem = attr.getAttribute("data-color"),
       url = "https://developer.edamam.com/images/";
     switch(elem) {
