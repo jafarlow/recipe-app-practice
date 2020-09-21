@@ -5,6 +5,7 @@ import React from 'react';
 function Footer() {
   return (
     <footer className="footer">
+      <div className="invisible-element"></div>
       <p className="footer-text">Created by Jacob Farlow.&nbsp;
         <a
           href="https://jafarlow.github.io/portfolio/"
@@ -12,6 +13,20 @@ function Footer() {
           rel="external nofollow noopener noreferrer">Visit his portfolio
         </a> for more of his work.
       </p>
+      <div>
+      <a
+        href="https://www.edamam.com"
+        title="Powered by Edamam"
+        target="_blank"
+        rel="external nofollow noopener noreferrer"
+      >
+        <img
+          alt="Powered by Edamam"
+          src="https://developer.edamam.com/images/badge.png"
+          height="40" width="200"
+        />
+      </a>
+      </div>
     </footer>
   )
 }
