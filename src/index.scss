@@ -132,8 +132,9 @@ button {
   // matches width of Edamam logo to serve as a "counter width" so auto margin
   // on `p` will shove logo to the right while keeping text centered
   .invisible-element {
-    width: 12.5rem;
+    width: 6.25rem;
     visibility: hidden;
+    margin-left: 1rem;
   }
 
   p {
@@ -145,6 +146,10 @@ button {
 
   a {
     color: $footerLink;
+  }
+
+  .attribution {
+    padding-right: 1rem;
   }
 }
 
@@ -191,6 +196,17 @@ button {
     img {
       width: 15.625rem;
       height: auto;
+    }
+  }
+
+  // reset so invisible-element is not used
+  .footer {
+    .invisible-element {
+      width: 0;
+      margin: 0;
+    }
+    p {
+      margin-left: 0;
     }
   }
 }
@@ -312,6 +328,12 @@ button {
     img {
       width: 15.625rem;
       height: auto;
+    }
+  }
+
+  .footer {
+    p {
+      margin-left: -1rem;
     }
   }
 }
