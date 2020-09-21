@@ -129,10 +129,18 @@ button {
   align-items: center;
   background-color: $purple;
 
+  // matches width of Edamam logo to serve as a "counter width" so auto margin
+  // on `p` will shove logo to the right while keeping text centered
+  .invisible-element {
+    width: 12.5rem;
+    visibility: hidden;
+  }
+
   p {
     padding: 0 1rem;
     color: white;
     font-size: 1.125rem;
+    margin: auto;
   }
 
   a {
