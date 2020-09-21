@@ -1,4 +1,5 @@
 import React from 'react';
+import badge from './badge.png'
 
 //NOTE: `&nbsp;` forces a space to exist in text when it would otherwise wouldn't due to default structure interactions between elements
 
@@ -13,19 +14,19 @@ function Footer() {
           rel="external nofollow noopener noreferrer">Visit his portfolio
         </a> for more of his work.
       </p>
-      <div>
-      <a
-        href="https://www.edamam.com"
-        title="Powered by Edamam"
-        target="_blank"
-        rel="external nofollow noopener noreferrer"
-      >
-        <img
-          alt="Powered by Edamam"
-          src="https://developer.edamam.com/images/badge.png"
-          height="40" width="200"
-        />
-      </a>
+      <div className="attribution">
+        <a
+          href="https://www.edamam.com"
+          title="Powered by Edamam"
+          target="_blank"
+          rel="external nofollow noopener noreferrer"
+        >
+          <img
+            alt="Powered by Edamam"
+            src={badge}
+            height="40" width="100"
+          />
+        </a>
       </div>
     </footer>
   )
