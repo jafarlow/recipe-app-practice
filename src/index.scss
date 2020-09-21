@@ -2,7 +2,8 @@ $purple: rgba(82,45,128,0.65);
 $lightpurple: rgba(82,45,128,0.25);
 
 $almostblack: rgba(22,22,29,1);
-$footerLink: #61DAFB;
+$footerLink: rgb(240,255,0);
+$footerLinkHov: #61DAFB;
 
 $lightorange: rgba(246,103,51,0.35);
 $mediumorange: rgba(246,103,51,0.65);
@@ -146,6 +147,10 @@ button {
 
   a {
     color: $footerLink;
+
+    &:hover {
+      color: $footerLinkHov;
+    }
   }
 
   .attribution {
