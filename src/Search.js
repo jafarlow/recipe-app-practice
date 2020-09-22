@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Recipe from './Recipe.js'
-import Pagination from "@material-ui/lab/Pagination";
+// import Pagination from "@material-ui/lab/Pagination";
 
 const Search = () => {
 
@@ -12,21 +12,15 @@ const Search = () => {
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('')
 
-  // for page info
-  const [page, setPage] = useState(1) // current page
-  const [count, setCount] = useState(0) // total pages
-  const [pageSize, setPageSize] = useState(12) // items per page
+  // for using pageSize to determine #results to display
+  const [pageSize, setPageSize] = useState(12) // items on initial search
 
-  // for future implementation of giving user ability to change
-  // the recipes displayed per page
-  const pageSizes = [12, 24, 48, 96]
-
-  const request = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${apiKey}&from=0&to=96` // NOTE: update to be 96 in future
+  const request = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${apiKey}&from=0&to=96`
 
   useEffect(() => {
     getRecipes()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query, page, pageSize])
+  }, [query, pageSize])
 
   const getRecipes = async () => {
     const response = await fetch(request)
@@ -34,10 +28,7 @@ const Search = () => {
     // hits are the individual recipes returned from a query
     setRecipes(data.hits)
     // NOTE: use the below to see full JSON structure when looking to add more functionality to the app
-    console.log(data.hits);
-    // NOTE: this is an attempt from pagination tutorial
-    setCount(data.hits.length / pageSize) // first thoughts: this'd have `count` #pages
-    // console.log(count)
+    // console.log(data.hits);
   }
 
   const updateSearch = e => {
@@ -50,33 +41,23 @@ const Search = () => {
     setSearch('')
   }
 
-  // NOTE: pagination from tutorial
-  const handlePageChange = (e, val) => {
-    setPage(val)
-  }
-
-  // if (pageSize === 12) {
-  //
-  // }
-
-  // NOTE: pagination from tutorial
-  // NOTE: Updating to use a "view more" button instead
+  // NOTE: pagination from tutorial updated to use a "view more" button instead
   const handlePageSizeChange = (e) => {
-    // setPageSize(e.target.value)
     if (pageSize < 96) {
       setPageSize(pageSize + 24)
     }
-
-    // resets page to 1 when adjusting the page size
-    setPage(1)
   }
 
-  // NOTE: this changes the size of the array mapped over below, based on the page size selected by the user--default is 12
+  // NOTE: this changes the size of the array mapped over below, based on the pageSize triggered by 'view more' button
   const recipeArray = (arr) => {
     return arr.slice(0,pageSize)
   }
 
-  // NOTE: **CONSTANT** is to simplify if statement below
+  // NOTE: **CONSTANT** is to simplify `if...` statement below
+  // breaks down:
+  // 1) if there aren't at least 12, there will be no more to display
+  // 2) since all expansions are designed to be divisible by 12, any operation check which leave a remainder means there will be no more to display
+  // 3) results are maxed out at 96, so that's the final check
   const disableCheck = recipes.length < 12 || recipeArray(recipes).length % 12 !== 0 || pageSize >= 96
 
   // NOTE: **FUNCTION** sets button props & ternary trigger for text
@@ -86,9 +67,6 @@ const Search = () => {
     }
     return false
   }
-
-  // start of recipe map to display on page
-  //{recipes.map(dish => (
 
   return (
     <div className="Search">
