@@ -34,10 +34,10 @@ const Search = () => {
     // hits are the individual recipes returned from a query
     setRecipes(data.hits)
     // NOTE: use the below to see full JSON structure when looking to add more functionality to the app
-    // console.log(data.hits);
+    console.log(data.hits);
     // NOTE: this is an attempt from pagination tutorial
     setCount(data.hits.length / pageSize) // first thoughts: this'd have `count` #pages
-    console.log(count)
+    // console.log(count)
   }
 
   const updateSearch = e => {
@@ -76,6 +76,17 @@ const Search = () => {
     return arr.slice(0,pageSize)
   }
 
+  // NOTE: **CONSTANT** is to simplify if statement below
+  const disableCheck = recipes.length < 12 || recipeArray(recipes).length % 12 !== 0 || pageSize >= 96
+
+  // NOTE: **FUNCTION** sets button props & ternary trigger for text
+  function disabled() {
+    if (disableCheck) {
+      return true
+    }
+    return false
+  }
+
   // start of recipe map to display on page
   //{recipes.map(dish => (
 
@@ -101,7 +112,15 @@ const Search = () => {
           />
         ))}
       </article>
-      <button type="button" onClick={handlePageSizeChange} disabled={recipes.length < 12 || pageSize >= 96}>View more</button>
+      <button
+        id="view"
+        type="button"
+        onClick={handlePageSizeChange}
+        disabled={disabled()}
+        aria-disabled={disabled()}
+      >
+        {disabled() === true ? 'End of results' : 'View more'}
+      </button>
     </div>
   )
 }
