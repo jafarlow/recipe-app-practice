@@ -55,9 +55,17 @@ const Search = () => {
     setPage(val)
   }
 
+  // if (pageSize === 12) {
+  //
+  // }
+
   // NOTE: pagination from tutorial
+  // NOTE: Updating to use a "view more" button instead
   const handlePageSizeChange = (e) => {
-    setPageSize(e.target.value)
+    // setPageSize(e.target.value)
+    if (pageSize < 96) {
+      setPageSize(pageSize + 24)
+    }
 
     // resets page to 1 when adjusting the page size
     setPage(1)
@@ -80,6 +88,7 @@ const Search = () => {
       </form>
       <section>
         {"Recipes per page: "}
+        <button type="button" onClick={handlePageSizeChange}>View more</button>
         <select onChange={handlePageSizeChange} value={pageSize}>
           {pageSizes.map((size) => (
             <option key={size} value={size}>
@@ -87,15 +96,6 @@ const Search = () => {
             </option>
           ))}
         </select>
-        <Pagination
-          count={count}
-          page={page}
-          siblingCount={1}
-          boundaryCount={1}
-          variant="outlined"
-          shape="rounded"
-          onChange={handlePageChange}
-        />
       </section>
       <article className="recipes">
         {recipeArray(recipes).map(dish => (
