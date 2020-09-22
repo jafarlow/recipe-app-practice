@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Recipe from './Recipe.js'
-// import Pagination from "@material-ui/lab/Pagination";
 
 const Search = () => {
 
