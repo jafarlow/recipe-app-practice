@@ -27,7 +27,8 @@ Changes to Search page:
 Expanded Search page functionality:
   - there is now a 'view more' button which allows users to see more recipes related to a search without having to first revise their search
   - 'view more' will increase displayed recipes by 24
-  - increase will work until there are no more to display, or until reaching 96, which is the maximum recipes which can be returned from a single search\
+  - increase will work until there are no more to display, or until reaching 96, which is the maximum recipes which can be returned from a single search
+
 Updated footer:
   - changed link-to-portfolio color to pass WGAC contrast requirements
   - added required attribution for Edamam per API usage agreement
