@@ -100,7 +100,7 @@ const Search = () => {
       <article className="recipes">
         {recipeArray(recipes).map(dish => (
           <Recipe
-            key={dish.recipe.calories}
+            key={Math.random()}
             title={dish.recipe.label}
             calories={dish.recipe.calories}
             image={dish.recipe.image}
@@ -121,7 +121,7 @@ const Search = () => {
       >
         {
           recipes.length === 0 ? 'Gotta search first!'
-          : disabled() === true ? 'End of results' 
+          : disabled() === true ? 'End of results'
           : 'View more'
         }
       </button>
