@@ -86,17 +86,6 @@ const Search = () => {
         <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
         <button className="search-button" type="submit">Search</button>
       </form>
-      <section>
-        {"Recipes per page: "}
-        <button type="button" onClick={handlePageSizeChange}>View more</button>
-        <select onChange={handlePageSizeChange} value={pageSize}>
-          {pageSizes.map((size) => (
-            <option key={size} value={size}>
-              {size}
-            </option>
-          ))}
-        </select>
-      </section>
       <article className="recipes">
         {recipeArray(recipes).map(dish => (
           <Recipe
@@ -112,6 +101,7 @@ const Search = () => {
           />
         ))}
       </article>
+      <button type="button" onClick={handlePageSizeChange} disabled={recipes.length < 12 || pageSize >= 96}>View more</button>
     </div>
   )
 }
