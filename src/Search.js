@@ -119,7 +119,11 @@ const Search = () => {
         disabled={disabled()}
         aria-disabled={disabled()}
       >
-        {disabled() === true ? 'End of results' : 'View more'}
+        {
+          recipes.length === 0 ? 'Gotta search first!'
+          : disabled() === true ? 'End of results' 
+          : 'View more'
+        }
       </button>
     </div>
   )
