@@ -66,6 +66,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.125rem;
 }
 
 h1 {
@@ -78,14 +79,20 @@ label {
 }
 
 input {
+  width: 31.25rem;
+  height: 2.5rem;
   margin: 1rem 0 2rem;
   padding: 0.25rem 0;
-  width: 31.25rem;
+  font-size: 1.125rem;
+  box-sizing: border-box;
 }
 
 button {
+  height: 2.5rem;
   padding: 0.25rem 0.75rem;
   font-weight: bold;
+  font-size: 1.125rem;
+  box-sizing: border-box;
 }
 
 .recipes {
@@ -255,6 +262,10 @@ button {
     }
   }
 
+  .Search {
+    font-size: 1rem;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -264,16 +275,22 @@ button {
 
   label {
     margin: 0 2rem;
+    width: 25rem;
   }
 
   input {
-    width: 400px;
+    width: 25rem;
+    height: 2rem;
+    font-size: 1rem;
     margin-bottom: 0.25rem;
     box-sizing: border-box;
   }
 
   button {
     width: 25rem;
+    height: 2rem;
+    line-height: 1rem;
+    font-size: 1rem;
     box-sizing: border-box;
   }
 
@@ -319,13 +336,17 @@ button {
     padding: 0 1.5rem;
   }
 
-  input {
+  label, input, button {
     width: 18.75rem;
   }
 
-  button {
-    width: 18.75rem;
-  }
+  // input {
+  //   width: 18.75rem;
+  // }
+  //
+  // button {
+  //   width: 18.75rem;
+  // }
 
   .recipes {
     grid-template-columns: repeat(1, 1fr);
