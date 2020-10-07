@@ -41,3 +41,5 @@ Added label to form:
 Minor stylesheet updates:
   - removed duplicate code in media queries
   - negative margin is no longer effective in footer, so it has been removed
+  - increased font size for desktop interfaces on search page
+  - increased height of input and buttons to match new font size
