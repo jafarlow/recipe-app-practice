@@ -71,7 +71,8 @@ const Search = () => {
     <div className="Search">
       <h1>Recipe Search</h1>
       <form className="search-form" onSubmit={getSearch}>
-        <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
+        <label htmlFor="search-bar">Enter an ingredient, a dish name, or dish type to find recipes.</label>
+        <input className="search-bar" id="search-bar" type="text" value={search} onChange={updateSearch}/>
         <button className="search-button" type="submit">Search</button>
       </form>
       <article className="recipes">
