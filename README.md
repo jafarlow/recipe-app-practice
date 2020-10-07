@@ -32,3 +32,12 @@ Expanded Search page functionality:
 Updated footer:
   - changed link-to-portfolio color to pass WGAC contrast requirements
   - added required attribution for Edamam per API usage agreement
+
+**version 3.1, published 7 October 2020:**\
+Added label to form:
+  - this was a missing element to meet accessibility criteria
+  - adjustments to stylesheet to compensate for the new element
+
+Minor stylesheet updates:
+  - removed duplicate code in media queries
+  - negative margin is no longer effective in footer, so it has been removed
