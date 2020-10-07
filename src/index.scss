@@ -73,31 +73,17 @@ h1 {
   text-align: center;
 }
 
-form {
-  // display: grid;
-  // grid-template-columns: 31.25rem 6.578125rem;
-  // grid-template-rows: 2rem;
-  // grid-template-areas:
-  //   "top ."
-  //   "input button";
-}
-
 label {
   display: block;
-  // grid-area: "top";
 }
 
 input {
-  // display: inline-block;
-  // grid-area: "input";
   margin: 1rem 0 2rem;
   padding: 0.25rem 0;
   width: 31.25rem;
 }
 
 button {
-  // display: inline-block;
-  // grid-area: "button";
   padding: 0.25rem 0.75rem;
   font-weight: bold;
 }
@@ -333,21 +319,12 @@ button {
     padding: 0 1.5rem;
   }
 
-  // form {
-  //   display: flex;
-  //   flex-direction: column;
-  //   margin-bottom: 2rem;
-  // }
-
   input {
     width: 18.75rem;
-    // margin-bottom: 0.25rem;
-    // box-sizing: border-box;
   }
 
   button {
     width: 18.75rem;
-    // box-sizing: border-box;
   }
 
   .recipes {
@@ -366,7 +343,6 @@ button {
   .footer {
     p {
       font-size: 0.9rem;
-      margin-left: -1rem;
     }
   }
 }
