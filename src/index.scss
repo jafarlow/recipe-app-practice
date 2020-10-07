@@ -283,7 +283,6 @@ button {
     height: 2rem;
     font-size: 1rem;
     margin-bottom: 0.25rem;
-    box-sizing: border-box;
   }
 
   button {
@@ -291,7 +290,6 @@ button {
     height: 2rem;
     line-height: 1rem;
     font-size: 1rem;
-    box-sizing: border-box;
   }
 
   .recipes {
@@ -339,14 +337,6 @@ button {
   label, input, button {
     width: 18.75rem;
   }
-
-  // input {
-  //   width: 18.75rem;
-  // }
-  //
-  // button {
-  //   width: 18.75rem;
-  // }
 
   .recipes {
     grid-template-columns: repeat(1, 1fr);
