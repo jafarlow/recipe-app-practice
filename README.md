@@ -47,6 +47,7 @@ Minor stylesheet updates:
 **version 3.1.1, published 27 July 2022:**\
 Resolved dependency issues:
   - removed deprecated `node-sass` and replaced it with `sass`
+  - updated to v5.0.0 of `react-scripts`, which closed a large number of security vulnerabilities
 
 Minor stylesheet update:
   - added fixed image height to reduce page jank as images load and push tile size
