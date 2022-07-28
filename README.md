@@ -43,3 +43,11 @@ Minor stylesheet updates:
   - negative margin is no longer effective in footer, so it has been removed
   - increased font size for desktop interfaces on search page
   - increased height of input and buttons to match new font size
+
+**version 3.1.1, published 27 July 2022:**\
+Resolved dependency issues:
+  - removed deprecated `node-sass` and replaced it with `sass`
+
+Minor stylesheet update:
+  - added fixed image height to reduce page jank as images load and push tile size
+  - added max-width to images in case Edamam API serves an over large image
